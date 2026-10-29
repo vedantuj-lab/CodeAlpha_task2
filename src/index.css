@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #151715;
+    --bg-secondary: #1D211E;
+    --surface-calc: #242925;
+    --surface-calc-secondary: #2D332E;
+    --text-primary: #F6F5EF;
+    --text-secondary: #A8ADA5;
+    --border-primary: #414940;
+    --border-subtle: #2d352c;
+    
+    --accent-lime: #C4F05D;
+    --accent-lime-hover: #D4FF79;
+    --accent-lime-soft: #EAF7C9;
+    --accent-lime-deep: #7D9D35;
+
+    --accent-orange: #F29B63;
+    --accent-orange-hover: #FFB27E;
+    --accent-orange-soft: #FBE4D4;
+
+    --accent-lavender: #B8A5F5;
+    --accent-lavender-soft: #E9E1FF;
+
+    --status-success: #278252;
+    --status-warning: #B7791F;
+    --status-error: #C83C42;
+    --status-info: #4C79B8;
+  }
+
+  html.light {
+    --bg-main: #F7F6F0;
+    --bg-secondary: #ECEFE8;
+    --surface-calc: #FFFFFF;
+    --surface-calc-secondary: #F3F5F0;
+    --text-primary: #20251F;
+    --text-secondary: #686F66;
+    --border-primary: #D1D7CD;
+    --border-subtle: #E2E6DE;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Manrope', 'Inter', sans-serif;
+  }
+
+  .font-mono, code, .calc-digits {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}

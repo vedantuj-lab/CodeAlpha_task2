@@ -1,0 +1,2071 @@
+CALCORA
+COMPLETE ALL-IN-ONE MASTER PROMPT
+Premium Calculator Website | Frontend | UI/UX | Authentication | Member Dashboard | Admin Dashboard | Scientific Calculator | History | Database | Testing | Deployment
+1. YOUR ROLE AND OBJECTIVE
+
+Act as a senior full-stack developer, frontend architect, UI/UX designer, visual design specialist, React developer, TypeScript engineer, JavaScript calculation-engine developer, database architect, authentication specialist, cybersecurity engineer, accessibility specialist, and QA tester.
+
+Your responsibility is to design, develop, integrate, test, and prepare a complete calculator website named CALCORA.
+
+Build a polished, responsive, professional calculator application that combines numerical correctness with an exceptional user interface.
+
+This is a complete application-development task.
+
+Do not create only a calculator mockup.
+
+Do not create only the landing page.
+
+Do not leave the calculator buttons non-functional.
+
+Do not create login screens that do not connect to authentication.
+
+Do not create dashboards with fake statistics.
+
+Do not create a visual prototype and claim that the application is complete.
+
+Implement the complete application in the same project.
+
+Include the frontend, calculator engine, keyboard support, calculation history, scientific operations, authentication, Member Dashboard, Admin Dashboard, persistent settings, database integration where configured, security, testing, documentation, and deployment preparation.
+
+Work through the entire specification sequentially without requiring me to provide separate prompts for individual development phases.
+
+If an external service requires configuration, implement all functionality that can be completed, provide the exact configuration instructions, and continue with the remaining work.
+
+Do not repeatedly ask for permission to proceed.
+
+Do not stop after generating the interface.
+
+Build the actual application.
+
+PROJECT IDENTITY
+
+Name: Calcora.
+
+Tagline: Precision at Your Fingertips.
+
+Product description:
+
+Calcora is a modern calculator platform designed for students, developers, professionals, and everyday users. It provides reliable arithmetic, scientific calculations, calculation history, reusable results, personalized settings, and account-based features through a polished, responsive interface.
+
+The calculator must remain usable without an account.
+
+Authentication is required only for account-specific features and administration.
+
+The core calculator must not depend on a database or internet connection.
+
+2. TECHNOLOGY STACK
+
+Use the following technology stack.
+
+FRONTEND:
+
+React.
+Vite.
+TypeScript.
+HTML5.
+CSS3.
+Tailwind CSS if configured correctly, or a consistent custom CSS system.
+React Router.
+Lucide React for icons.
+Framer Motion or a lightweight equivalent where useful.
+
+CALCULATION ENGINE:
+
+A dedicated TypeScript calculation module.
+A safe arithmetic parser or explicit calculation state machine.
+No arbitrary JavaScript evaluation.
+
+AUTHENTICATION AND DATABASE:
+
+Supabase Authentication.
+Supabase PostgreSQL.
+Supabase Row Level Security.
+
+LOCAL PERSISTENCE:
+
+LocalStorage for guest calculation history and local preferences.
+Database persistence for authenticated users where appropriate.
+
+DEVELOPMENT:
+
+npm.
+Vite.
+Git.
+GitHub.
+Environment variables.
+
+DEPLOYMENT:
+
+Vercel or an equivalent hosting platform.
+
+TECHNICAL RULES:
+
+Keep calculation logic separate from UI components.
+Use reusable components.
+Use TypeScript types.
+Use a consistent design system.
+Keep authentication separate from calculation logic.
+Do not put the entire application in one component.
+Do not expose privileged credentials.
+Do not require a paid API for basic calculations.
+Do not require a backend for the core calculator.
+Do not use eval() or the Function constructor to evaluate expressions.
+Do not invent credentials or deployed URLs.
+Do not claim a feature works unless it has been implemented and tested.
+
+The application must build successfully using the documented commands.
+
+3. COMPLETE APPLICATION STRUCTURE
+
+Build the following website.
+
+PUBLIC PAGES:
+
+Landing Page.
+Calculator Workspace.
+Features Page.
+About Page.
+Login Page.
+Registration Page.
+Password Recovery Page.
+
+MEMBER PAGES:
+
+Member Dashboard.
+Calculator Workspace.
+Calculation History.
+Saved Calculations.
+Profile and Settings.
+
+ADMIN PAGES:
+
+Admin Dashboard.
+User Management.
+Application Activity.
+Calculator Configuration.
+Application Settings.
+
+Keep the administrative features limited to those that are useful for this application.
+
+Do not create unrelated modules such as payments, shopping, chat, or social networking.
+
+The primary purpose must always remain calculator functionality.
+
+NAVIGATION FLOW:
+
+Landing Page
+|
+|---- Open Calculator
+| |
+| v
+| Calculator Workspace
+|
+|---- Sign In
+| |
+| v
+| Authentication
+| |
+| |---- Member
+| | |
+| | v
+| | Member Dashboard
+| |
+| |---- Admin
+| |
+| v
+| Admin Dashboard
+|
+|---- Register
+|
+v
+Member Account
+
+The calculator must be available without authentication.
+
+Guests must be able to perform calculations immediately.
+
+Do not force users to register before using basic arithmetic.
+
+4. BRAND IDENTITY AND DESIGN SYSTEM
+
+Create a premium, modern calculator experience.
+
+The design must feel like a professionally developed software product rather than a basic college assignment.
+
+DESIGN CHARACTERISTICS:
+
+Strong visual hierarchy.
+Clear numerical display.
+Large, accessible calculator buttons.
+Carefully controlled colors.
+Consistent spacing.
+Elegant typography.
+Subtle shadows.
+Smooth micro-interactions.
+Distinctive operator buttons.
+Responsive layouts.
+Clear status messages.
+Minimal unnecessary decoration.
+
+Avoid:
+
+Excessive gradients.
+Excessive glassmorphism.
+Unnecessary animation.
+Tiny buttons.
+Low-contrast text.
+Cluttered layouts.
+Fake charts.
+Fake statistics.
+Non-functional controls.
+Excessive blue throughout the website.
+
+Create different visual treatments for the landing page, calculator workspace, authentication pages, Member Dashboard, Admin Dashboard, and settings.
+
+Maintain consistent branding across all sections.
+
+5. COMPLETE COLOR PALETTE
+
+Define reusable CSS variables for all colors.
+
+5.1 Primary brand colors
+
+Main dark background:
+#151715
+
+Secondary dark background:
+#1D211E
+
+Calculator surface:
+#242925
+
+Secondary calculator surface:
+#2D332E
+
+Primary text on dark backgrounds:
+#F6F5EF
+
+Secondary text:
+#A8ADA5
+
+Primary border:
+#414940
+
+Light background:
+#F7F6F0
+
+Light surface:
+#FFFFFF
+
+Light secondary surface:
+#ECEFE8
+
+Light primary text:
+#20251F
+
+Light secondary text:
+#686F66
+
+5.2 Primary accent: electric lime
+
+Primary lime:
+#C4F05D
+
+Hover lime:
+#D4FF79
+
+Soft lime:
+#EAF7C9
+
+Deep lime:
+#7D9D35
+
+Use lime for:
+
+Equals button.
+Primary calls to action.
+Selected controls.
+Active indicators.
+Important result highlights.
+5.3 Secondary accent: warm orange
+
+Primary orange:
+#F29B63
+
+Hover orange:
+#FFB27E
+
+Soft orange:
+#FBE4D4
+
+Use orange for:
+
+Selected mathematical operators.
+Secondary actions.
+Important interface highlights.
+Calculation feedback where appropriate.
+5.4 Supporting accent: lavender
+
+Primary lavender:
+#B8A5F5
+
+Soft lavender:
+#E9E1FF
+
+Use lavender sparingly for:
+
+Scientific mode indicators.
+Advanced mathematical tools.
+Optional visual highlights.
+5.5 Status colors
+
+Success:
+#278252
+
+Warning:
+#B7791F
+
+Error:
+#C83C42
+
+Information:
+#4C79B8
+
+5.6 Theme requirements
+
+DARK THEME:
+
+Dark background.
+Graphite calculator surface.
+Light numerical display.
+Lime equals button.
+Orange operator accents.
+
+LIGHT THEME:
+
+Warm off-white background.
+White calculator surface.
+Dark text.
+Lime primary action.
+Orange operator accents.
+
+Both themes must provide sufficient contrast.
+
+All buttons, dialogs, form fields, and dashboard components must remain readable in both themes.
+
+Persist the selected theme.
+
+Do not implement a theme toggle that only changes its own icon without changing the application theme.
+
+6. TYPOGRAPHY AND LAYOUT
+
+Use a modern, professional typography system.
+
+Suggested fonts:
+
+Inter for body text.
+Manrope or a similar modern sans-serif for interface headings.
+A monospaced font for selected numerical displays if it improves alignment.
+
+Use responsive font sizes.
+
+Suggested desktop hero heading:
+56–76px.
+
+Page headings:
+30–42px.
+
+Calculator result:
+48–72px, adapting to available space.
+
+Body text:
+14–17px.
+
+Button labels:
+14–16px.
+
+Small metadata:
+12–14px.
+
+Never allow long results to overflow the calculator display.
+
+Use a consistent spacing scale:
+
+4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px, and 96px.
+
+Recommended maximum content width:
+1440px.
+
+Support desktop, laptop, tablet, and mobile layouts.
+
+Test at:
+360px, 390px, 768px, 1024px, 1280px, and 1440px.
+
+7. LANDING PAGE
+
+Create a premium landing page introducing Calcora.
+
+7.1 Navigation bar
+
+Include:
+
+Calcora logo.
+Home.
+Calculator.
+Features.
+About.
+Sign In.
+Get Started.
+
+Requirements:
+
+The logo returns to the landing page.
+Calculator opens the calculator workspace.
+Features navigates to the features section.
+About navigates to the about section.
+Sign In opens authentication.
+Get Started opens the calculator immediately or registration when account creation is explicitly selected.
+
+Use a responsive mobile navigation menu.
+
+All links must work.
+
+7.2 Hero section
+
+Headline:
+
+"Precision at Your Fingertips."
+
+Supporting text:
+
+"Calculate smarter with a beautifully designed calculator built for everyday mathematics, scientific exploration, and efficient problem-solving."
+
+Primary button:
+Open Calculator.
+
+Secondary button:
+Explore Features.
+
+The primary button opens the calculator.
+
+The secondary button scrolls to the features section.
+
+Design:
+
+Dark charcoal background.
+Electric-lime accent.
+Large typography.
+A visually attractive calculator preview.
+Subtle background shapes.
+Controlled motion.
+Clear calls to action.
+
+Do not let decorative effects reduce text readability.
+
+7.3 Live calculator preview
+
+Display a small interactive calculator preview or a polished visual demonstration connected to the actual calculator component.
+
+If interactive, every button must work.
+
+Do not create a fake calculator that produces incorrect results.
+
+Prefer reusing the real calculator component with an appropriate compact layout.
+
+7.4 Features section
+
+Display feature cards for:
+
+Basic Arithmetic.
+Scientific Calculations.
+Keyboard Support.
+Calculation History.
+Saved Calculations.
+Light and Dark Themes.
+Responsive Interface.
+Secure Personal Accounts.
+
+Each card must describe a feature that actually exists.
+
+Do not advertise unimplemented functionality.
+
+7.5 How it works
+
+Explain:
+
+Open Calcora.
+Enter an expression.
+Calculate the result.
+Review or save the calculation.
+
+Use a clear visual sequence.
+
+7.6 About section
+
+Explain the purpose of Calcora as a reliable, accessible calculator for students and everyday users.
+
+Do not invent user counts, customer testimonials, or performance claims.
+
+7.7 Final call to action
+
+Headline:
+
+"Your Next Calculation Starts Here."
+
+Button:
+Calculate Now.
+
+The button must open the calculator workspace.
+
+7.8 Footer
+
+Include:
+
+Calcora logo.
+Short description.
+Home.
+Calculator.
+Features.
+Login.
+Registration.
+Dynamic copyright year.
+
+Do not invent social media accounts or contact information.
+
+8. CORE CALCULATOR WORKSPACE
+
+This is the most important part of the entire application.
+
+Build a fully functional calculator.
+
+The calculator must work without login, internet access, a database, or an API.
+
+Use a dedicated calculation engine.
+
+Do not use eval().
+
+8.1 Calculator layout
+
+Create a polished calculator workspace.
+
+DESKTOP:
+
+Use a two-column layout.
+
+Left:
+
+Calculator.
+Main display.
+Numeric keypad.
+Operators.
+Scientific controls when enabled.
+
+Right:
+
+Calculation history.
+Saved calculations.
+History controls.
+
+The right panel may be collapsible.
+
+MOBILE:
+
+Display the calculator first.
+
+Place history behind a drawer, tab, or collapsible panel.
+
+Ensure the numerical keypad remains usable.
+
+Do not create horizontal overflow.
+
+8.2 Display
+
+The display must include:
+
+Previous expression.
+Current input.
+Selected operation where appropriate.
+Result.
+Error state.
+
+Examples:
+
+Previous expression:
+25 + 15
+
+Current result:
+40
+
+Another example:
+
+Previous expression:
+12 × 8
+
+Current result:
+96
+
+Requirements:
+
+Align numerical content consistently.
+Format numbers for readability.
+Prevent overflow.
+Support long expressions.
+Preserve sufficient numerical precision internally.
+Avoid displaying ugly floating-point artifacts.
+Display meaningful errors.
+
+Use responsive font scaling for large numbers.
+
+8.3 Standard numeric keypad
+
+Provide buttons for:
+
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
+
+Provide:
+
+Decimal point.
+Addition.
+Subtraction.
+Multiplication.
+Division.
+Equals.
+Clear All.
+Delete Last Character.
+Percentage.
+Sign Toggle.
+
+Every button must work.
+
+8.4 Standard operations
+
+Support:
+
+Addition:
+25 + 15 = 40.
+
+Subtraction:
+25 - 15 = 10.
+
+Multiplication:
+12 × 8 = 96.
+
+Division:
+100 ÷ 4 = 25.
+
+Decimal calculation:
+2.5 + 1.5 = 4.
+
+Negative numbers:
+-5 + 8 = 3.
+
+Percentage:
+Provide consistent percentage behavior and document it.
+
+8.5 Calculator state
+
+Use a predictable calculator state model.
+
+Track:
+
+Current input.
+Previous operand.
+Selected operator.
+Current expression.
+Whether a result has been produced.
+Whether the calculator is in an error state.
+Previous calculation where required.
+Memory value if memory functions are implemented.
+
+Prevent invalid state transitions.
+
+Repeated clicks must not produce unpredictable calculations.
+
+8.6 Clear and delete
+
+Implement:
+
+AC:
+Clear the complete calculation and reset the calculator.
+
+DEL:
+Delete the last entered digit or character.
+
+Sign toggle:
+Change the current number's sign.
+
+Clear History:
+Clear calculation history after confirmation where appropriate.
+
+Do not confuse clearing the current expression with clearing the entire history.
+
+8.7 Percentage behavior
+
+Implement a clearly defined percentage operation.
+
+The behavior must be consistent and documented.
+
+Examples should cover:
+
+Percentage of a number.
+Positive values.
+Negative values.
+Percentage with addition or subtraction.
+
+If the interface uses context-dependent percentage behavior, document it clearly.
+
+Do not silently switch meanings between operations.
+
+8.8 Operator precedence
+
+Support normal mathematical precedence in expression-based calculations.
+
+For example:
+
+7 + 2 × 3 = 13.
+
+Multiplication and division must take precedence over addition and subtraction.
+
+Parentheses must be supported if expression entry is implemented.
+
+If the calculator uses a simpler chained-operation mode, make its behavior explicit and do not display misleading mathematical expressions.
+
+Prefer a safe expression parser that supports:
+
+Numeric literals.
+Unary signs.
+Addition.
+Subtraction.
+Multiplication.
+Division.
+Parentheses.
+Supported percentage operations.
+
+Never execute arbitrary JavaScript.
+
+9. SCIENTIFIC CALCULATOR MODE
+
+Add a Scientific Mode toggle.
+
+The standard calculator must remain simple.
+
+Scientific controls should appear only when Scientific Mode is enabled.
+
+Use lavender accents for selected scientific controls.
+
+Implement the following functions:
+
+9.1 Trigonometry
+sin(x).
+cos(x).
+tan(x).
+
+Provide a clear degree/radian toggle.
+
+Default to degrees.
+
+The selected angle mode must be visible.
+
+The calculation engine must correctly convert degrees to radians when necessary.
+
+Handle tangent near undefined angles gracefully.
+
+9.2 Inverse trigonometry
+asin(x).
+acos(x).
+atan(x).
+
+Handle domain errors.
+
+9.3 Logarithms
+log10(x).
+ln(x).
+
+Reject invalid domains.
+
+For example, logarithms of zero or negative real numbers must produce an understandable error.
+
+9.4 Powers and roots
+x².
+x³.
+xʸ.
+Square root.
+Cube root.
+General supported roots where appropriate.
+
+Handle invalid real-number domains.
+
+9.5 Other scientific functions
+
+Implement:
+
+Reciprocal 1/x.
+Absolute value.
+Factorial for valid non-negative integers.
+Pi constant.
+Euler's number.
+Parentheses.
+
+Define and enforce reasonable input limits for factorials and large calculations.
+
+Do not freeze the interface when users enter extremely large values.
+
+9.6 Scientific mode requirements
+Every displayed function must work.
+Provide clear labels or tooltips.
+Support keyboard input where appropriate.
+Display readable errors.
+Handle domain restrictions.
+Respect degree/radian mode.
+Ensure mobile layouts remain usable.
+
+Do not display scientific functions that are not implemented.
+
+10. KEYBOARD SUPPORT
+
+Implement full keyboard interaction.
+
+DIGITS:
+0–9.
+
+OPERATORS:
+
+for addition.
+for subtraction.
+for multiplication.
+/ for division.
+
+OTHER KEYS:
+. for decimal.
+Enter for calculation.
+= for calculation.
+Backspace for deletion.
+Escape for clearing the current calculation.
+% for percentage.
+( and ) for parentheses where supported.
+
+Additional shortcuts:
+
+Ctrl/Cmd + H:
+Open or focus calculation history, where appropriate.
+
+Ctrl/Cmd + Shift + C:
+Copy the current result only if the shortcut does not conflict with essential browser behavior and is documented.
+
+Requirements:
+
+Keyboard input must use the same calculation engine as button input.
+Prevent accidental duplicate event handling.
+Avoid interfering with normal typing in unrelated input fields.
+Handle key events only when appropriate.
+Provide visible focus indicators.
+Document shortcuts in the interface.
+
+All standard calculator operations must be usable without a mouse.
+
+11. NUMERICAL CORRECTNESS AND ERROR HANDLING
+
+This section is mandatory.
+
+Handle:
+
+Division by zero.
+Invalid expressions.
+Empty input.
+Repeated decimal points.
+Consecutive operators.
+Negative values.
+Very large values.
+Very small values.
+Floating-point precision.
+Invalid scientific domains.
+Factorial of invalid values.
+Non-finite results.
+Missing operands.
+Unbalanced parentheses.
+Repeated equals.
+Invalid percentage input.
+
+Examples:
+
+0.1 + 0.2 must display a readable result rather than an ugly floating-point artifact.
+
+10 / 0 must display a clear error.
+
+sqrt(-1) in real-number mode must display an appropriate domain error.
+
+log10(0) must not produce a misleading valid result.
+
+Factorial must reject negative or non-integer values.
+
+Do not display NaN or Infinity as if it were an ordinary valid result.
+
+Use a documented numerical formatting strategy.
+
+Do not round intermediate calculations unnecessarily.
+
+Use sufficient precision internally and format results for display.
+
+If a result exceeds ordinary display limits, use scientific notation where appropriate.
+
+Provide a way to recover from an error without refreshing the page.
+
+12. CALCULATION HISTORY
+
+Implement a complete calculation history system.
+
+Record completed calculations.
+
+Each history record should contain:
+
+Unique ID.
+Expression.
+Result.
+Timestamp.
+Calculation mode.
+Optional metadata necessary for accurate reuse.
+
+Example history:
+
+25 + 15 = 40.
+
+100 / 4 = 25.
+
+12 × 8 = 96.
+
+12.1 History interface
+
+Display:
+
+Expression.
+Result.
+Timestamp.
+Reuse Result action.
+Delete Entry action.
+
+Allow users to:
+
+View previous calculations.
+Reuse a previous result.
+Delete individual entries.
+Clear the entire history.
+Search history where practical.
+12.2 History persistence
+
+For guests:
+Use LocalStorage.
+
+For authenticated members:
+Use the database when configured.
+
+The calculator must continue working if database access fails.
+
+Use a clearly documented local fallback.
+
+Do not claim guest history synchronizes across devices.
+
+12.3 History behavior
+Record only valid completed calculations.
+Do not record repeated invalid submissions as successful calculations.
+Avoid accidental duplicate history entries.
+Preserve useful calculation metadata.
+Handle malformed LocalStorage data safely.
+Limit the number of stored entries.
+Display an empty state when history is empty.
+13. SAVED CALCULATIONS AND MEMORY FUNCTIONS
+
+Implement a Saved Calculations section.
+
+Authenticated members should be able to save useful calculations with an optional title.
+
+Example:
+
+Title:
+Monthly Budget Total.
+
+Expression:
+12000 + 4500 + 1800.
+
+Result:
+18300.
+
+Users should be able to:
+
+Save a calculation.
+View saved calculations.
+Reuse a saved result.
+Rename a saved calculation.
+Delete a saved calculation.
+
+For guests, provide temporary local saving if implemented.
+
+Do not present local saves as account-synchronized records.
+
+Also implement standard calculator memory functions where practical:
+
+MC:
+Clear memory.
+
+MR:
+Recall memory.
+
+M+:
+Add the current value to memory.
+
+M-:
+Subtract the current value from memory.
+
+MS:
+Store the current value.
+
+Memory functions must work correctly and provide clear feedback.
+
+14. LOGIN AND REGISTRATION
+
+Create a premium authentication experience.
+
+DESIGN:
+
+Dark charcoal background.
+Graphite form surface.
+Electric-lime primary action.
+Orange secondary accents.
+Subtle lavender decorative details.
+
+Create a responsive split-screen layout.
+
+LEFT PANEL:
+
+Calcora logo.
+Headline: "Your Calculations, Your Workspace."
+Short description.
+Subtle calculator illustration or real calculator preview.
+
+RIGHT PANEL:
+
+Login or registration form.
+Validation messages.
+Clear action buttons.
+Navigation between login and registration.
+
+On mobile, stack the panels vertically.
+
+14.1 Login page
+
+Fields:
+
+Email.
+Password.
+
+Controls:
+
+Show/hide password.
+Sign In.
+Forgot Password.
+Create Account.
+
+Implement:
+
+Required-field validation.
+Email validation.
+Authentication loading state.
+Clear error messages.
+Session persistence.
+Correct role-based redirection.
+14.2 Registration page
+
+Fields:
+
+Display name.
+Email.
+Password.
+Confirm Password.
+
+Requirements:
+
+Validate required fields.
+Validate email format.
+Enforce a reasonable minimum password length.
+Confirm passwords match.
+Prevent repeated submissions.
+Handle duplicate-account errors.
+Show appropriate success or failure feedback.
+
+Do not store plaintext passwords.
+
+14.3 Password recovery
+
+Implement a real password recovery flow using Supabase Authentication when configured.
+
+If email delivery or redirect URLs need configuration, document the exact settings.
+
+Do not simulate a completed password reset.
+
+14.4 Authentication
+
+Use Supabase Authentication for production accounts.
+
+Support:
+
+Registration.
+Login.
+Logout.
+Session persistence.
+Password recovery.
+Authentication state changes.
+
+Do not require authentication for basic calculator use.
+
+14.5 Guest experience
+
+Guests must be able to:
+
+Open the calculator.
+Perform arithmetic.
+Use supported scientific functions.
+Use keyboard controls.
+View calculation history.
+Use local history persistence.
+Change the theme.
+
+When a guest attempts to use an account-specific feature, provide an appropriate login or registration prompt.
+
+Do not interrupt ordinary calculations with login popups.
+
+15. MEMBER DASHBOARD
+
+Create a dedicated Member Dashboard.
+
+COLOR COMBINATION:
+
+Deep charcoal.
+Graphite surfaces.
+Electric-lime highlights.
+Orange secondary accents.
+White text.
+
+Navigation:
+
+Overview.
+Calculator.
+History.
+Saved Calculations.
+Profile and Settings.
+
+Do not add unnecessary features.
+
+15.1 Member overview
+
+Display:
+
+Welcome message.
+Member display name.
+Recent calculations.
+Saved calculation count.
+Quick access to the calculator.
+Quick access to history.
+
+All displayed data must come from actual records.
+
+Do not fabricate statistics.
+
+15.2 Calculator
+
+Provide the complete calculator workspace.
+
+The calculator must use the same calculation engine as the public calculator.
+
+15.3 History
+
+Display the authenticated member's history.
+
+Allow:
+
+Search.
+Reuse result.
+Delete entry.
+Clear history after confirmation.
+15.4 Saved calculations
+
+Allow members to:
+
+Save calculations.
+View saved calculations.
+Rename records.
+Reuse results.
+Delete records.
+15.5 Profile settings
+
+Allow members to:
+
+Update display name.
+View their authenticated email.
+Change permitted preferences.
+Select light or dark theme.
+Select default calculator mode.
+Select degree or radian preference.
+Log out.
+
+Do not allow members to change their own role.
+
+Persist settings appropriately.
+
+16. ADMIN DASHBOARD
+
+Create a separate administrative interface.
+
+COLOR COMBINATION:
+
+Deep charcoal sidebar.
+Graphite navigation surfaces.
+Warm-white or light-gray content.
+Electric-lime primary indicators.
+Orange action accents.
+
+Keep the interface focused.
+
+Navigation:
+
+Overview.
+User Management.
+Application Activity.
+Calculator Configuration.
+Settings.
+16.1 Admin overview
+
+Display real statistics:
+
+Registered users.
+Recent account registrations.
+Total saved calculations if an authorized aggregate is available.
+Recent administrative activity.
+
+Only show information that is actually available and appropriately authorized.
+
+Do not invent user counts or activity.
+
+16.2 User management
+
+Allow authorized administrators to:
+
+View permitted user records.
+Search users.
+Filter by role.
+View account creation dates where available.
+Inspect basic account status where supported.
+Assign or revoke administrative privileges through a trusted administrative process.
+
+Do not display user passwords.
+
+Do not expose private calculation content unnecessarily.
+
+Do not allow arbitrary unauthenticated users to access this page.
+
+16.3 Application activity
+
+Display real administrative activity where an activity log is implemented.
+
+Possible events:
+
+Administrative setting changes.
+Role changes.
+Account-management actions.
+
+Do not fabricate events.
+
+If activity logging is not configured, display an honest empty state.
+
+16.4 Calculator configuration
+
+Provide only useful application-level settings.
+
+For example:
+
+Default theme.
+Default calculator mode.
+Default angle mode.
+Maximum stored history entries.
+Enabled scientific functions.
+
+Validate settings before saving.
+
+Global settings must not silently override a member's personal preferences unless the behavior is explicitly designed and documented.
+
+16.5 Admin permissions
+
+Administrators may manage application settings and permitted user roles.
+
+Administrators must not modify another user's private calculation history without a legitimate, explicitly implemented administrative requirement.
+
+Enforce permissions in the database.
+
+Hiding a button is not sufficient authorization.
+
+17. DATABASE DESIGN
+
+Use Supabase PostgreSQL for account-based persistence.
+
+Create the schema, migrations, indexes, and Row Level Security policies.
+
+17.1 Profiles table
+
+Fields:
+
+id.
+display_name.
+role.
+created_at.
+updated_at.
+
+The profile ID must correspond to the authenticated user.
+
+Roles:
+
+member.
+admin.
+
+Users must not be able to assign themselves the admin role.
+
+17.2 Calculation history table
+
+Fields:
+
+id.
+user_id.
+expression.
+result.
+mode.
+created_at.
+
+Store results using a suitable representation that preserves the intended displayed value.
+
+Do not rely on floating-point serialization alone when exact representation is required for a particular calculation.
+
+17.3 Saved calculations table
+
+Fields:
+
+id.
+user_id.
+title.
+expression.
+result.
+mode.
+created_at.
+updated_at.
+
+Members must only access their own saved calculations.
+
+17.4 User preferences table
+
+Fields:
+
+user_id.
+theme.
+calculator_mode.
+angle_mode.
+updated_at.
+
+Validate permitted values.
+
+17.5 Administrative activity table
+
+Fields:
+
+id.
+actor_user_id.
+action.
+target_type.
+target_id.
+metadata where appropriate.
+created_at.
+
+Do not store passwords, authentication tokens, or unnecessary sensitive information in logs.
+
+17.6 Row Level Security
+
+Implement actual policies.
+
+PUBLIC:
+
+Can use the client-side calculator.
+Does not require database access for arithmetic.
+
+AUTHENTICATED MEMBERS:
+
+Can access their own calculation history.
+Can access their own saved calculations.
+Can access and update permitted profile information.
+Can update their own preferences.
+Cannot change their own role.
+Cannot access other members' private calculation records.
+
+ADMINISTRATORS:
+
+Can access authorized user-management data.
+Can manage permitted application settings.
+Can view permitted administrative activity.
+Cannot obtain plaintext passwords.
+
+Protect administrator operations through trusted authorization and database policies.
+
+Do not expose privileged service-role credentials in frontend code.
+
+Never trust a role supplied by the browser.
+
+18. THEME AND PERSONALIZATION
+
+Implement a complete theme system.
+
+Themes:
+
+Dark.
+Light.
+
+Requirements:
+
+Working toggle.
+Immediate visual update.
+Persistent preference.
+Correct contrast.
+Consistent colors across pages.
+Correct appearance of dialogs, forms, buttons, and dashboards.
+
+Add useful personalization:
+
+Default calculator mode.
+Degree/radian preference.
+History display preference.
+Keyboard shortcut reference.
+Reduced-motion support.
+
+Do not add personalization options that have no effect.
+
+19. LOCAL DEVELOPMENT MODE
+
+The application must remain usable when Supabase is not configured.
+
+If Supabase is configured:
+
+Use real authentication.
+Persist account-based history.
+Persist saved calculations.
+Persist user preferences.
+Enforce database permissions.
+Support the Admin Dashboard.
+
+If Supabase is not configured:
+
+Allow public calculator use.
+Allow scientific calculations.
+Support keyboard controls.
+Persist guest history locally.
+Persist theme preferences locally.
+Support locally saved calculations where implemented.
+Clearly identify account features as requiring configuration.
+Do not fake secure login.
+Do not claim that records synchronize across users.
+
+Provide an explicit development-mode strategy.
+
+Do not silently use insecure authentication in production.
+
+The calculator engine must work independently of Supabase.
+
+20. ERROR HANDLING AND USER FEEDBACK
+
+Implement consistent loading, empty, success, and error states.
+
+LOADING:
+
+Login.
+Registration.
+Password recovery.
+History retrieval.
+Saved calculation retrieval.
+Profile updates.
+Admin operations.
+
+EMPTY:
+
+No history.
+No saved calculations.
+No registered users available to display.
+No activity records.
+
+SUCCESS:
+
+Calculation completed.
+Calculation saved.
+History entry deleted.
+Preferences updated.
+Profile updated.
+User-management action completed.
+
+ERROR:
+
+Division by zero.
+Invalid expression.
+Invalid scientific domain.
+Invalid credentials.
+Database failure.
+Network failure.
+Unauthorized action.
+Failed save.
+Failed profile update.
+
+Do not use alert() for every interaction.
+
+Use accessible inline feedback or toast notifications.
+
+Do not report success when a database operation failed.
+
+Prevent duplicate submissions.
+
+Allow users to recover from calculator errors without refreshing the application.
+
+21. ACCESSIBILITY
+
+Follow practical accessibility requirements.
+
+Implement:
+
+Semantic HTML.
+Keyboard-accessible controls.
+Visible focus indicators.
+Accessible button labels.
+Accessible form labels.
+Sufficient color contrast.
+Appropriate dialog semantics.
+Responsive typography.
+Reduced-motion support.
+Screen-reader-friendly error messages.
+Accessible theme controls.
+Accessible scientific calculator controls.
+
+The calculator must remain usable with a keyboard.
+
+Do not depend exclusively on hover effects.
+
+Do not use color alone to communicate errors or success.
+
+22. SECURITY
+
+Implement secure defaults.
+
+Requirements:
+
+Do not store plaintext passwords.
+Do not expose privileged API keys.
+Do not allow self-assigned administrator privileges.
+Protect database operations using Row Level Security.
+Validate all account-management requests.
+Handle expired sessions.
+Protect member-specific records.
+Avoid unsafe rendering of user-supplied content.
+Avoid exposing sensitive database errors.
+Protect administrator routes and operations.
+Avoid committing populated environment files.
+Do not log passwords or authentication tokens.
+Do not claim client-side role checks provide production security.
+
+The calculator must remain usable even if authentication or database services are unavailable.
+
+23. PERFORMANCE AND RESPONSIVENESS
+
+Optimize the website for ordinary desktop and mobile devices.
+
+Requirements:
+
+Avoid unnecessary dependencies.
+Avoid excessive rerenders.
+Keep calculation logic efficient.
+Avoid blocking the interface during large calculations.
+Limit expensive mathematical operations.
+Handle large inputs safely.
+Use responsive layouts.
+Clean up event listeners.
+Clean up subscriptions.
+Prevent memory leaks.
+Keep animations lightweight.
+
+Test at:
+
+360px.
+390px.
+768px.
+1024px.
+1280px.
+1440px.
+
+Verify:
+
+No horizontal overflow.
+Buttons are easy to tap.
+Numerical displays remain readable.
+History is usable on mobile.
+Scientific mode adapts correctly.
+Forms remain usable.
+Dashboards remain responsive.
+24. COMPLETE TESTING REQUIREMENTS
+
+Run the available tests.
+
+Do not claim that tests passed unless they were actually executed.
+
+24.1 Arithmetic tests
+
+Addition:
+25 + 15 = 40.
+
+Subtraction:
+25 - 15 = 10.
+
+Multiplication:
+12 × 8 = 96.
+
+Division:
+100 / 4 = 25.
+
+Operator precedence:
+7 + 2 × 3 = 13.
+
+Decimals:
+0.1 + 0.2 should display an appropriate result.
+
+Negative values:
+-5 + 8 = 3.
+
+Parentheses:
+(2 + 3) × 4 = 20, if expression parsing supports parentheses.
+
+24.2 Error tests
+
+Verify:
+
+Division by zero.
+Invalid expressions.
+Repeated decimal points.
+Missing operands.
+Unbalanced parentheses.
+Invalid scientific domains.
+Negative factorial.
+Excessively large inputs.
+Recovery after an error.
+24.3 Scientific tests
+
+Verify:
+
+sin(30°) = 0.5.
+cos(60°) = 0.5.
+tan(45°) = 1, within suitable numerical tolerance.
+log10(100) = 2.
+ln(e) = 1.
+sqrt(81) = 9.
+2³ = 8.
+5! = 120.
+
+Verify degree/radian conversion.
+
+Verify domain restrictions.
+
+24.4 Keyboard tests
+
+Verify:
+
+Digits.
+Operators.
+Decimal.
+Enter.
+Equals.
+Backspace.
+Escape.
+Percentage.
+Parentheses where supported.
+24.5 History tests
+
+Verify:
+
+Completed calculations are recorded.
+Invalid calculations are not recorded as successful.
+Results can be reused.
+Entries can be deleted.
+History can be cleared.
+Local history persists after refresh.
+Account history persists when the database is configured.
+24.6 Authentication tests
+
+Verify:
+
+Registration.
+Login.
+Logout.
+Invalid credentials.
+Session persistence.
+Password recovery when configured.
+Protected routes.
+Member permissions.
+Administrator permissions.
+24.7 Member Dashboard tests
+
+Verify:
+
+Correct account information.
+History display.
+Saved calculations.
+Profile updates.
+Theme persistence.
+Preferences persistence.
+24.8 Admin Dashboard tests
+
+Verify:
+
+Admin-only access.
+User-management restrictions.
+Real statistics.
+Settings changes.
+Permission enforcement.
+Activity logging where implemented.
+24.9 Build tests
+
+Run the production build.
+
+Fix:
+
+Missing imports.
+Missing components.
+TypeScript errors.
+Invalid routes.
+JavaScript exceptions.
+Broken controls.
+Layout defects.
+Avoidable console errors.
+
+Report actual results and identify any tests that could not be run.
+
+25. PROJECT STRUCTURE
+
+Use a maintainable project structure similar to:
+
+calcora/
+|
+|-- public/
+| |-- favicon.svg
+|
+|-- src/
+| |
+| |-- components/
+| | |-- Navbar.tsx
+| | |-- Footer.tsx
+| | |-- CalculatorDisplay.tsx
+| | |-- CalculatorKeypad.tsx
+| | |-- ScientificPanel.tsx
+| | |-- HistoryPanel.tsx
+| | |-- SavedCalculations.tsx
+| | |-- ThemeToggle.tsx
+| | |-- LoadingState.tsx
+| | |-- EmptyState.tsx
+| |
+| |-- pages/
+| | |-- LandingPage.tsx
+| | |-- CalculatorPage.tsx
+| | |-- FeaturesPage.tsx
+| | |-- AboutPage.tsx
+| | |-- LoginPage.tsx
+| | |-- RegisterPage.tsx
+| | |-- PasswordRecoveryPage.tsx
+| | |-- MemberDashboard.tsx
+| | |-- HistoryPage.tsx
+| | |-- SavedCalculationsPage.tsx
+| | |-- ProfilePage.tsx
+| | |-- AdminDashboard.tsx
+| | |-- UserManagementPage.tsx
+| | |-- ActivityPage.tsx
+| | |-- AdminSettingsPage.tsx
+| |
+| |-- layouts/
+| | |-- PublicLayout.tsx
+| | |-- MemberLayout.tsx
+| | |-- AdminLayout.tsx
+| |
+| |-- context/
+| | |-- AuthContext.tsx
+| | |-- ThemeContext.tsx
+| |
+| |-- services/
+| | |-- authService.ts
+| | |-- historyService.ts
+| | |-- savedCalculationsService.ts
+| | |-- preferencesService.ts
+| |
+| |-- calculator/
+| | |-- parser.ts
+| | |-- evaluator.ts
+| | |-- scientific.ts
+| | |-- formatter.ts
+| | |-- types.ts
+| |
+| |-- hooks/
+| |
+| |-- lib/
+| | |-- supabase.ts
+| |
+| |-- types/
+| | |-- index.ts
+| |
+| |-- styles/
+| | |-- globals.css
+| | |-- design-tokens.css
+| |
+| |-- App.tsx
+| |-- main.tsx
+|
+|-- supabase/
+| |-- migrations/
+|
+|-- .env.example
+|-- .gitignore
+|-- package.json
+|-- tsconfig.json
+|-- vite.config.ts
+|-- README.md
+
+Adjust the structure when necessary.
+
+Every file must have a real purpose.
+
+Do not create empty files merely to imitate an architecture.
+
+26. ENVIRONMENT CONFIGURATION
+
+Create a .env.example file.
+
+Include the required public configuration variables for the chosen Supabase integration.
+
+For example:
+
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+
+Use the correct variable names for the actual implementation.
+
+Never expose a service-role key in frontend code.
+
+Document:
+
+Supabase project creation.
+Authentication configuration.
+Database setup.
+Row Level Security.
+Environment variables.
+Local development.
+Production build.
+
+If credentials are unavailable, the calculator must remain functional in local mode.
+
+27. README DOCUMENTATION
+
+Create a complete README.md.
+
+Include:
+
+Project name.
+Project description.
+Features.
+Technologies.
+Installation instructions.
+Local development commands.
+Environment configuration.
+Calculator controls.
+Keyboard shortcuts.
+Supported mathematical operations.
+Scientific functions.
+Percentage behavior.
+Numerical limitations.
+Authentication setup.
+Database schema.
+Security policies.
+Build commands.
+Testing instructions.
+Screenshots section.
+GitHub repository information.
+Deployment instructions.
+Known limitations.
+
+Do not invent screenshots or deployment URLs.
+
+Do not claim the database is configured if it is not.
+
+28. GITHUB AND DEPLOYMENT
+
+Prepare the project for GitHub.
+
+Repository name:
+
+CodeAlpha_Calculator
+
+Requirements:
+
+Clean source code.
+Complete README.
+Correct .gitignore.
+.env.example.
+No exposed credentials.
+Successful production build.
+No unnecessary generated files.
+
+Prepare deployment using Vercel or an equivalent platform.
+
+Document:
+
+Build command.
+Output directory.
+Environment variables.
+Routing configuration.
+Supabase setup.
+Production verification.
+
+The calculator must work after deployment.
+
+Basic calculations must not depend on database connectivity.
+
+Test the deployed site if deployment access is available.
+
+Do not claim deployment is complete unless it actually has been completed.
+
+29. FINAL NON-NEGOTIABLE RULES
+Implement the complete application in the same project.
+Do not stop after the landing page.
+Do not stop after the basic calculator.
+Implement scientific mode.
+Implement keyboard support.
+Implement calculation history.
+Implement saved calculations.
+Implement theme switching.
+Implement login and registration.
+Implement the Member Dashboard.
+Implement the Admin Dashboard.
+Implement persistent database features when configured.
+Keep the core calculator usable without login.
+Do not use eval().
+Do not create non-functional buttons.
+Do not create fake authentication.
+Do not fabricate statistics.
+Do not expose privileged credentials.
+Do not permit self-assigned admin privileges.
+Do not rely solely on frontend authorization.
+Do not silently replace working code with placeholders.
+Do not remove existing functionality when adding new features.
+Test actual calculations.
+Test responsive layouts.
+Run the production build.
+Report actual test results.
+Document anything requiring external configuration.
+Do not claim a feature is complete if it remains unimplemented.
+
+If the environment reaches a practical execution limit, preserve the current files and continue from the existing implementation instead of restarting the application.
+
+Inspect existing code before changing it.
+
+30. FINAL DELIVERY CHECKLIST
+
+Before declaring the project complete, verify that the following have been implemented.
+
+FRONTEND:
+
+Landing page.
+Responsive navigation.
+Calculator workspace.
+Features page.
+About page.
+Login page.
+Registration page.
+Password recovery page.
+
+CALCULATOR:
+
+Addition.
+Subtraction.
+Multiplication.
+Division.
+Decimal calculations.
+Negative values.
+Percentage.
+Clear.
+Delete.
+Scientific functions.
+Parentheses where supported.
+Operator precedence.
+Keyboard support.
+Numerical formatting.
+Error handling.
+
+PERSONAL FEATURES:
+
+Calculation history.
+Reusable results.
+Saved calculations.
+Memory functions.
+Theme switching.
+User preferences.
+
+MEMBER:
+
+Dashboard.
+History.
+Saved calculations.
+Profile settings.
+Logout.
+
+ADMIN:
+
+Dashboard.
+User management.
+Application activity where configured.
+Calculator configuration.
+Administrative permissions.
+
+BACKEND:
+
+Authentication.
+Database schema.
+Row Level Security.
+Persistent history.
+Persistent saved calculations.
+Persistent preferences.
+
+QUALITY:
+
+Responsive design.
+Accessibility.
+Security.
+Loading states.
+Empty states.
+Error handling.
+README.
+GitHub preparation.
+Deployment preparation.
+Production build.
+Tests and actual results.
+
+If an item requires external configuration, explicitly state what is required and do not misrepresent it as complete.
+
+FINAL EXECUTION INSTRUCTION
+
+START BUILDING CALCORA NOW.
+
+First inspect the available development environment.
+
+Then create the project foundation, implement the calculator engine, build the complete frontend, integrate authentication, create the Member and Admin experiences, implement persistent data features, configure security, run tests, fix defects, and prepare the project for GitHub and deployment.
+
+Complete all phases in this same project.
+
+Do not ask me to provide separate prompts for the remaining phases.
+
+Do not return only a plan.
+
+Do not stop after generating the UI.
+
+Implement the actual application, verify its functionality, and clearly report anything that genuinely requires external configuration.
+
+The final goal is a professional, fully functional, responsive calculator platform suitable for a portfolio and CodeAlpha submission.

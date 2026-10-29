@@ -1,0 +1,6 @@
+{
+  "name": "Calcora",
+  "description": "Precision at Your Fingertips. Premium modern calculator platform with scientific calculation engine, calculation history, saved expressions, theme switching, and member/admin workspaces.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
